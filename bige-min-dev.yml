@@ -4,7 +4,7 @@ server:
 spring:
 
   datasource:
-    url: jdbc:oracle:thin:@//localhost:1521/initest  
+    url: jdbc:oracle:thin:@//172.16.123.143:1521/initest  
     driver-class-name: oracle.jdbc.OracleDriver  
     username: bige_min  
     password: Bige_2018  
@@ -20,6 +20,7 @@ spring:
       ddl-auto: create-drop
     properties:
       hibernate:
+        '[dialect]': org.hibernate.dialect.Oracle12cDialect
         '[show_sql]': true
         '[use_sql_comments]': false
         '[format_sql]': false
@@ -28,7 +29,7 @@ spring:
   sql:
     init:
       mode: always
-      platform: sql
+      platform: oracle
 
 configuration:
     texto: Configurando entorno Desarrollo ...
